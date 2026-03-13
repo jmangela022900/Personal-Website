@@ -9,114 +9,126 @@
 
 /* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
 }
 
-/* FULL BACKGROUND */
+/* BACKGROUND */
 body{
-    background: url("bg.jpg") no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
+background:url("bg.jpg") no-repeat center center fixed;
+background-size:cover;
+min-height:100vh;
 }
 
 /* LIGHT OVERLAY */
 body::before{
-    content:"";
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.2);
-    z-index:-1;
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.2);
+z-index:-1;
 }
 
 /* TOP BAR */
 .topbar{
-    background:#222;
-    color:white;
-    padding:10px 20px;
-    font-size:14px;
+background:#222;
+color:white;
+padding:14px 20px;
+display:flex;
+align-items:center;
+gap:15px;
+font-size:16px;
 }
 
-/* NAVIGATION */
-.nav{
-    background:#eee;
-    padding:15px 30px;
-    display:flex;
-    justify-content:flex-end;
-    gap:15px;
-    flex-wrap:wrap;
+/* MENU ICON */
+.menu{
+font-size:28px;
+cursor:pointer;
 }
 
-.nav a{
-    text-decoration:none;
-    background:#d9d9d9;
-    padding:8px 18px;
-    border-radius:20px;
-    color:black;
-    font-size:14px;
-    transition:0.3s;
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#f0f0f0;
+padding-top:60px;
+transition:0.3s;
+box-shadow:3px 0px 10px rgba(0,0,0,0.3);
 }
 
-.nav a:hover{
-    background:#bbb;
+/* SIDEBAR LINKS */
+.sidebar a{
+display:block;
+padding:16px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+border-bottom:1px solid #ddd;
+}
+
+.sidebar a:hover{
+background:#ddd;
 }
 
 /* MAIN CONTENT BOX */
 .container{
-    background:rgba(233,233,233,0.9);
-    padding:60px;
-    min-height:70vh;
-    margin:40px;
-    border-radius:10px;
+background:rgba(233,233,233,0.95);
+padding:60px;
+min-height:70vh;
+margin:40px;
+border-radius:10px;
 }
 
 /* TITLE */
 .title{
-    font-size:24px;
-    margin-bottom:40px;
+font-size:24px;
+margin-bottom:40px;
 }
 
 /* HOBBIES GRID */
 .hobbies{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
 }
 
 /* HOBBY CARD */
 .card{
-    background:#dcdcdc;
-    padding:15px;
-    display:flex;
-    align-items:center;
-    gap:15px;
-    border-radius:8px;
-    transition:0.3s;
+background:#dcdcdc;
+padding:15px;
+display:flex;
+align-items:center;
+gap:15px;
+border-radius:8px;
+transition:0.3s;
 }
 
 .card:hover{
-    transform:scale(1.03);
+transform:scale(1.03);
 }
 
 /* ICON */
 .card img{
-    width:45px;
+width:45px;
 }
 
 /* TEXT */
 .card h3{
-    font-size:14px;
-    margin-bottom:5px;
+font-size:14px;
+margin-bottom:5px;
 }
 
 .card p{
-    font-size:12px;
-    color:#333;
+font-size:12px;
+color:#333;
 }
 
 </style>
@@ -124,93 +136,109 @@ body::before{
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-    Hobbies
+<!-- SIDEBAR MENU -->
+<div class="sidebar" id="sidebar">
+<a href="home.html">Home</a>
+<a href="hobbies.html">Hobbies</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 </div>
 
-<!-- NAVIGATION (✅ WORKING LINKS) -->
-<div class="nav">
-    <a href="home.html">Home</a>
-    <a href="hobbies.html">Hobbies</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>Hobbies</div>
 </div>
 
 <!-- CONTENT -->
 <div class="container">
 
-    <h2 class="title">HOBBIES</h2>
+<h2 class="title">HOBBIES</h2>
 
-    <div class="hobbies">
+<div class="hobbies">
 
-        <div class="card">
-            <img src="games.png">
-            <div>
-                <h3>GAMING</h3>
-                <p>I enjoy playing games</p>
-            </div>
-        </div>
+<div class="card">
+<img src="games.png">
+<div>
+<h3>GAMING</h3>
+<p>I enjoy playing games</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="camera.png">
-            <div>
-                <h3>PHOTOGRAPHY</h3>
-                <p>I love taking pictures</p>
-            </div>
-        </div>
+<div class="card">
+<img src="camera.png">
+<div>
+<h3>PHOTOGRAPHY</h3>
+<p>I love taking pictures</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="web.png">
-            <div>
-                <h3>DESIGNING</h3>
-                <p>I enjoy doing designs</p>
-            </div>
-        </div>
+<div class="card">
+<img src="web.png">
+<div>
+<h3>DESIGNING</h3>
+<p>I enjoy doing designs</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="soccer.png">
-            <div>
-                <h3>SPORT</h3>
-                <p>I like playing soccer</p>
-            </div>
-        </div>
+<div class="card">
+<img src="soccer.png">
+<div>
+<h3>SPORT</h3>
+<p>I like playing soccer</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="soccer.png">
-            <div>
-                <h3>SPORT</h3>
-                <p>I like playing soccer</p>
-            </div>
-        </div>
+<div class="card">
+<img src="soccer.png">
+<div>
+<h3>SPORT</h3>
+<p>I like playing soccer</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="soccer.png">
-            <div>
-                <h3>SPORT</h3>
-                <p>I like playing soccer</p>
-            </div>
-        </div>
+<div class="card">
+<img src="soccer.png">
+<div>
+<h3>SPORT</h3>
+<p>I like playing soccer</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="soccer.png">
-            <div>
-                <h3>SPORT</h3>
-                <p>I like playing soccer</p>
-            </div>
-        </div>
+<div class="card">
+<img src="soccer.png">
+<div>
+<h3>SPORT</h3>
+<p>I like playing soccer</p>
+</div>
+</div>
 
-        <div class="card">
-            <img src="soccer.png">
-            <div>
-                <h3>SPORT</h3>
-                <p>I like playing soccer</p>
-            </div>
-        </div>
-
-    </div>
+<div class="card">
+<img src="soccer.png">
+<div>
+<h3>SPORT</h3>
+<p>I like playing soccer</p>
+</div>
+</div>
 
 </div>
+</div>
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("sidebar");
+
+if(menu.style.left === "0px"){
+menu.style.left = "-250px";
+}else{
+menu.style.left = "0px";
+}
+
+}
+
+</script>
 
 </body>
 </html>
