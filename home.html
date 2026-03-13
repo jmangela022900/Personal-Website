@@ -8,6 +8,7 @@
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
@@ -15,6 +16,7 @@ box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
 }
 
+/* BACKGROUND */
 body{
 background-image:url("bg.jpg");
 background-size:cover;
@@ -22,45 +24,50 @@ background-position:center;
 min-height:100vh;
 }
 
-/* NAVBAR */
-.navbar{
+/* TOP BAR */
+.topbar{
 background:#222;
 color:white;
+padding:14px 20px;
 display:flex;
 align-items:center;
-padding:12px 20px;
+gap:15px;
 }
 
+/* MENU ICON */
 .menu{
 font-size:30px;
 cursor:pointer;
-margin-right:15px;
 }
 
-/* SIDEBAR */
+/* SIDEBAR MENU */
 .sidebar{
 position:fixed;
-left:-220px;
+left:-250px;
 top:0;
-width:220px;
+width:250px;
 height:100%;
-background:#ccc;
+background:#f0f0f0;
 padding-top:60px;
 transition:0.3s;
+box-shadow:3px 0px 10px rgba(0,0,0,0.3);
 }
 
+/* SIDEBAR LINKS */
 .sidebar a{
 display:block;
-padding:15px;
+padding:16px;
 text-decoration:none;
 color:black;
 font-weight:bold;
+border-bottom:1px solid #ddd;
 }
 
 .sidebar a:hover{
-background:#bbb;
+background:#ddd;
 }
 
+/* CONTENT CARD */
 .container{
 background:rgba(255,255,255,0.9);
 margin:40px;
@@ -69,15 +76,26 @@ border-radius:10px;
 display:flex;
 align-items:center;
 gap:40px;
+flex-wrap:wrap;
 }
 
+/* IMAGE */
 .container img{
 width:200px;
+height:200px;
+object-fit:cover;
 border-radius:10px;
 }
 
+/* TEXT */
 .text h1{
+font-size:26px;
 margin-bottom:15px;
+}
+
+.text p{
+max-width:400px;
+line-height:1.6;
 }
 
 </style>
@@ -85,27 +103,32 @@ margin-bottom:15px;
 
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-<a href="home.html">HOME</a>
-<a href="gallery.html">GALLERY</a>
-<a href="hobbies.html">HOBBIES</a>
-<a href="contact.html">CONTACT</a>
+<a href="home.html">Home</a>
+<a href="hobbies.html">Hobbies</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
 </div>
 
-<div class="navbar">
+<!-- TOP BAR -->
+<div class="topbar">
 <div class="menu" onclick="toggleMenu()">☰</div>
 <div>Home</div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="container">
 
-<img src="jm.jpg">
+<img src="jm.jpg" alt="JM Photo">
 
 <div class="text">
 <h1>Hello! I’m Jm Angela M. Perocho</h1>
+
 <p>
 Welcome to my personal website. I love exploring new things and expressing creativity.
 </p>
+
 </div>
 
 </div>
@@ -114,12 +137,12 @@ Welcome to my personal website. I love exploring new things and expressing creat
 
 function toggleMenu(){
 
-let menu=document.getElementById("sidebar");
+let menu = document.getElementById("sidebar");
 
-if(menu.style.left==="0px"){
-menu.style.left="-220px";
+if(menu.style.left === "0px"){
+menu.style.left = "-250px";
 }else{
-menu.style.left="0px";
+menu.style.left = "0px";
 }
 
 }
