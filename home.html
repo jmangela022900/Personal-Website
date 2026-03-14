@@ -109,6 +109,9 @@ line-height:1.6;
 <a href="hobbies.html">Hobbies</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
+
+<!-- LOGOUT BUTTON -->
+<a href="#" onclick="logout()">Logout</a>
 </div>
 
 <!-- TOP BAR -->
@@ -135,6 +138,12 @@ Welcome to my personal website. I love exploring new things and expressing creat
 
 <script>
 
+/* LOGIN PROTECTION */
+if(localStorage.getItem("loggedIn") !== "true"){
+window.location.href = "login.html";
+}
+
+/* SIDEBAR MENU */
 function toggleMenu(){
 
 let menu = document.getElementById("sidebar");
@@ -144,6 +153,14 @@ menu.style.left = "-250px";
 }else{
 menu.style.left = "0px";
 }
+
+}
+
+/* LOGOUT FUNCTION */
+function logout(){
+
+localStorage.removeItem("loggedIn");
+window.location.href = "login.html";
 
 }
 
