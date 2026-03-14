@@ -105,6 +105,7 @@ line-height:1.6;
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
+
 <a href="home.html">Home</a>
 <a href="hobbies.html">Hobbies</a>
 <a href="gallery.html">Gallery</a>
@@ -112,6 +113,7 @@ line-height:1.6;
 
 <!-- LOGOUT BUTTON -->
 <a href="#" onclick="logout()">Logout</a>
+
 </div>
 
 <!-- TOP BAR -->
@@ -138,7 +140,7 @@ Welcome to my personal website. I love exploring new things and expressing creat
 
 <script>
 
-/* LOGIN PROTECTION */
+/* CHECK LOGIN */
 if(localStorage.getItem("loggedIn") !== "true"){
 window.location.href = "login.html";
 }
@@ -160,7 +162,7 @@ menu.style.left = "0px";
 function logout(){
 
 localStorage.removeItem("loggedIn");
-window.location.href = "login.html";
+window.location.href="login.html";
 
 }
 
