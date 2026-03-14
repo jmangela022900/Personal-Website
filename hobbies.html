@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hobbies | JM Website</title>
+<title>Home | JM Personal Website</title>
 
 <style>
 
@@ -12,118 +13,105 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family: Arial, Helvetica, sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 }
 
-/* FULL BACKGROUND */
+/* BACKGROUND */
 body{
-background: url("bg.jpg") no-repeat center center fixed;
-background-size: cover;
-min-height: 100vh;
-}
-
-/* LIGHT OVERLAY */
-body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background: rgba(0,0,0,0.2);
-z-index:-1;
+background-image:url("bg.jpg");
+background-size:cover;
+background-position:center;
+min-height:100vh;
 }
 
 /* TOP BAR */
 .topbar{
-background:#222;
+background:#1f1f1f;
 color:white;
-padding:10px 20px;
-font-size:14px;
-}
-
-/* NAVIGATION */
-.nav{
-background:#eee;
-padding:15px 30px;
-display:flex;
-justify-content:flex-end;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.nav a{
-text-decoration:none;
-background:#d9d9d9;
-padding:8px 18px;
-border-radius:20px;
-color:black;
-font-size:14px;
-transition:0.3s;
-}
-
-.nav a:hover{
-background:#bbb;
-}
-
-/* MAIN CONTENT BOX */
-.container{
-background:rgba(233,233,233,0.9);
-padding:60px;
-min-height:70vh;
-margin:40px;
-border-radius:10px;
-}
-
-/* TITLE */
-.title{
-font-size:24px;
-margin-bottom:40px;
-}
-
-/* HOBBIES GRID */
-.hobbies{
-display:grid;
-grid-template-columns: repeat(3, 1fr);
-gap:30px;
-}
-
-/* HOBBY CARD */
-.card{
-background:#dcdcdc;
-padding:15px;
+padding:15px 20px;
 display:flex;
 align-items:center;
 gap:15px;
-border-radius:8px;
+font-size:18px;
+}
+
+/* MENU ICON */
+.menu{
+font-size:28px;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-220px;
+top:0;
+width:220px;
+height:100%;
+background:#f2f2f2;
+padding-top:60px;
 transition:0.3s;
+box-shadow:3px 0 10px rgba(0,0,0,0.3);
 }
 
-.card:hover{
-transform:scale(1.03);
+/* SIDEBAR LINKS */
+.sidebar a{
+display:block;
+padding:18px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+border-bottom:1px solid #ddd;
 }
 
-/* ICON */
-.card img{
-width:45px;
+.sidebar a:hover{
+background:#ddd;
+}
+
+/* MAIN CARD */
+.container{
+background:#e9e9e9;
+margin:60px 50px;
+padding:40px;
+border-radius:12px;
+display:flex;
+align-items:center;
+gap:40px;
+}
+
+/* IMAGE */
+.container img{
+width:180px;
+height:180px;
+border-radius:12px;
+object-fit:cover;
 }
 
 /* TEXT */
-.card h3{
-font-size:14px;
-margin-bottom:5px;
+.text h1{
+font-size:28px;
+margin-bottom:15px;
 }
 
-.card p{
-font-size:12px;
-color:#333;
+.text p{
+font-size:16px;
+line-height:1.6;
+max-width:500px;
 }
 
-/* RESPONSIVE */
+/* MOBILE */
 @media(max-width:768px){
-.hobbies{
-grid-template-columns: repeat(2,1fr);
+
+.container{
+flex-direction:column;
+text-align:center;
 }
+
+.container img{
+width:150px;
+height:150px;
+}
+
 }
 
 </style>
@@ -131,77 +119,52 @@ grid-template-columns: repeat(2,1fr);
 
 <body>
 
-<!-- TOP BAR -->
-<div class="topbar">
-Hobbies
-</div>
-
-<!-- NAVIGATION -->
-<div class="nav">
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
 <a href="home.html">Home</a>
 <a href="hobbies.html">Hobbies</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
 </div>
 
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>Home</div>
+</div>
+
 <!-- CONTENT -->
 <div class="container">
 
-<h2 class="title">HOBBIES</h2>
+<img src="jm.jpg" alt="JM Photo">
 
-<div class="hobbies">
+<div class="text">
 
-<div class="card">
-<img src="games.png">
-<div>
-<h3>GAMING</h3>
-<p>I enjoy playing video games during my free time.</p>
-</div>
-</div>
+<h1>Hello! I’m Jm Angela M. Perocho</h1>
 
-<div class="card">
-<img src="camera.png">
-<div>
-<h3>PHOTOGRAPHY</h3>
-<p>I love capturing moments and scenery.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="web.png">
-<div>
-<h3>DESIGNING</h3>
-<p>I enjoy creating designs and layouts.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="music.png">
-<div>
-<h3>LISTENING TO MUSIC</h3>
-<p>Music helps me relax and focus.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="travel.png">
-<div>
-<h3>TRAVELING</h3>
-<p>I like exploring new places and cultures.</p>
-</div>
-</div>
-
-<div class="card">
-<img src="movie.png">
-<div>
-<h3>WATCHING MOVIES</h3>
-<p>I enjoy watching movies and series.</p>
-</div>
-</div>
+<p>
+Welcome to my personal website. I love exploring new things and expressing creativity.
+</p>
 
 </div>
 
 </div>
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("sidebar");
+
+if(menu.style.left === "0px"){
+menu.style.left = "-220px";
+}else{
+menu.style.left = "0px";
+}
+
+}
+
+</script>
 
 </body>
 </html>
