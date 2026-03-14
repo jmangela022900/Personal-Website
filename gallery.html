@@ -1,122 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery | JM Website</title>
 
 <style>
-
 /* RESET */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 /* BACKGROUND */
 body{
-background:url("bg.jpg") center/cover no-repeat;
-min-height:100vh;
+  background:url("bg.jpg") center/cover no-repeat;
+  min-height:100vh;
 }
 
 /* TOP BAR */
 .topbar{
-background:#222;
-color:white;
-padding:14px 20px;
-display:flex;
-align-items:center;
-gap:15px;
+  background:#222;
+  color:white;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-/* MENU */
+/* MENU ICON */
 .menu{
-font-size:28px;
-cursor:pointer;
+  font-size:28px;
+  cursor:pointer;
 }
 
 /* SIDEBAR */
 .sidebar{
-position:fixed;
-left:-250px;
-top:0;
-width:250px;
-height:100%;
-background:#f0f0f0;
-padding-top:60px;
-transition:0.3s;
-box-shadow:3px 0px 10px rgba(0,0,0,0.3);
+  position:fixed;
+  left:-250px;
+  top:0;
+  width:250px;
+  height:100%;
+  background:#f0f0f0;
+  padding-top:60px;
+  transition:0.3s;
+  box-shadow:3px 0px 10px rgba(0,0,0,0.3);
 }
 
 .sidebar a{
-display:block;
-padding:16px;
-text-decoration:none;
-color:black;
-font-weight:bold;
-border-bottom:1px solid #ddd;
+  display:block;
+  padding:16px;
+  text-decoration:none;
+  color:black;
+  font-weight:bold;
+  border-bottom:1px solid #ddd;
 }
 
 .sidebar a:hover{
-background:#ddd;
+  background:#ddd;
 }
 
 /* MAIN CONTAINER */
 .container{
-background:rgba(255,255,255,0.9);
-margin:40px;
-padding:40px;
-border-radius:10px;
+  background:rgba(255,255,255,0.9);
+  margin:40px auto;
+  padding:40px;
+  border-radius:10px;
+  max-width:1200px;
 }
 
 .title{
-font-size:24px;
-margin-bottom:30px;
+  font-size:24px;
+  margin-bottom:30px;
+  text-align:center;
 }
 
 /* GALLERY GRID */
 .gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 /* IMAGE STYLE */
 .gallery img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:8px;
-cursor:pointer;
-transition:0.3s;
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+  transform:scale(1.05);
 }
 
 /* LIGHTBOX */
 .lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
 }
 
 .lightbox img{
-max-width:80%;
-max-height:80%;
-border-radius:10px;
+  max-width:80%;
+  max-height:80%;
+  border-radius:10px;
 }
 
+/* RESPONSIVE */
+@media screen and (max-width:900px){
+  .gallery{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media screen and (max-width:600px){
+  .gallery{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
@@ -124,64 +137,57 @@ border-radius:10px;
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-<a href="home.html">Home</a>
-<a href="hobbies.html">Hobbies</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+  <a href="home.html">Home</a>
+  <a href="hobbies.html">Hobbies</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </div>
 
 <!-- TOP BAR -->
 <div class="topbar">
-<div class="menu" onclick="toggleMenu()">☰</div>
-<div>Gallery</div>
+  <div class="menu" onclick="toggleMenu()">☰</div>
+  <div>Gallery</div>
 </div>
 
 <!-- CONTENT -->
 <div class="container">
+  <h2 class="title">GALLERY</h2>
 
-<h2 class="title">GALLERY</h2>
-
-<div class="gallery">
-
-<img src="photo1.jpg" onclick="openImage(photo1.src)">
-<img src="photo2.jpg" onclick="openImage(photo2.src)">
-<img src="photo3.jpg" onclick="openImage(photo3.src)">
-<img src="photo4.jpg" onclick="openImage(photo4.src)">
-<img src="photo5.jpg" onclick="openImage(photo5.src)">
-<img src="photo6.jpg" onclick="openImage(photo6.src)">
-
-</div>
-
+  <div class="gallery">
+    <img src="photo1.jpg" onclick="openImage(this.src)">
+    <img src="photo2.jpg" onclick="openImage(this.src)">
+    <img src="photo3.jpg" onclick="openImage(this.src)">
+    <img src="photo4.jpg" onclick="openImage(this.src)">
+    <img src="photo5.jpg" onclick="openImage(this.src)">
+    <img src="photo6.jpg" onclick="openImage(this.src)">
+  </div>
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeImage()">
-<img id="lightbox-img">
+  <img id="lightbox-img">
 </div>
 
 <script>
-
 /* SIDEBAR MENU */
 function toggleMenu(){
-let menu = document.getElementById("sidebar");
-
-if(menu.style.left === "0px"){
-menu.style.left = "-250px";
-}else{
-menu.style.left = "0px";
-}
+  let menu = document.getElementById("sidebar");
+  if(menu.style.left === "0px"){
+    menu.style.left = "-250px";
+  }else{
+    menu.style.left = "0px";
+  }
 }
 
 /* IMAGE POPUP */
 function openImage(src){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src=src;
 }
 
 function closeImage(){
-document.getElementById("lightbox").style.display="none";
+  document.getElementById("lightbox").style.display="none";
 }
-
 </script>
 
 </body>
