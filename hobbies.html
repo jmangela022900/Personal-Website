@@ -15,11 +15,11 @@ box-sizing:border-box;
 font-family: Arial, Helvetica, sans-serif;
 }
 
-/* BACKGROUND */
+/* FULL BACKGROUND */
 body{
-background:url("bg.jpg") no-repeat center center fixed;
-background-size:cover;
-min-height:100vh;
+background: url("bg.jpg") no-repeat center center fixed;
+background-size: cover;
+min-height: 100vh;
 }
 
 /* LIGHT OVERLAY */
@@ -30,7 +30,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.2);
+background: rgba(0,0,0,0.2);
 z-index:-1;
 }
 
@@ -38,49 +38,37 @@ z-index:-1;
 .topbar{
 background:#222;
 color:white;
-padding:14px 20px;
+padding:10px 20px;
+font-size:14px;
+}
+
+/* NAVIGATION */
+.nav{
+background:#eee;
+padding:15px 30px;
 display:flex;
-align-items:center;
+justify-content:flex-end;
 gap:15px;
-font-size:16px;
+flex-wrap:wrap;
 }
 
-/* MENU ICON */
-.menu{
-font-size:28px;
-cursor:pointer;
-}
-
-/* SIDEBAR */
-.sidebar{
-position:fixed;
-left:-250px;
-top:0;
-width:250px;
-height:100%;
-background:#f0f0f0;
-padding-top:60px;
-transition:0.3s;
-box-shadow:3px 0px 10px rgba(0,0,0,0.3);
-}
-
-/* SIDEBAR LINKS */
-.sidebar a{
-display:block;
-padding:16px;
+.nav a{
 text-decoration:none;
+background:#d9d9d9;
+padding:8px 18px;
+border-radius:20px;
 color:black;
-font-weight:bold;
-border-bottom:1px solid #ddd;
+font-size:14px;
+transition:0.3s;
 }
 
-.sidebar a:hover{
-background:#ddd;
+.nav a:hover{
+background:#bbb;
 }
 
 /* MAIN CONTENT BOX */
 .container{
-background:rgba(233,233,233,0.95);
+background:rgba(233,233,233,0.9);
 padding:60px;
 min-height:70vh;
 margin:40px;
@@ -96,7 +84,7 @@ margin-bottom:40px;
 /* HOBBIES GRID */
 .hobbies{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns: repeat(3, 1fr);
 gap:30px;
 }
 
@@ -131,23 +119,29 @@ font-size:12px;
 color:#333;
 }
 
+/* RESPONSIVE */
+@media(max-width:768px){
+.hobbies{
+grid-template-columns: repeat(2,1fr);
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- SIDEBAR MENU -->
-<div class="sidebar" id="sidebar">
+<!-- TOP BAR -->
+<div class="topbar">
+Hobbies
+</div>
+
+<!-- NAVIGATION -->
+<div class="nav">
 <a href="home.html">Home</a>
 <a href="hobbies.html">Hobbies</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
-</div>
-
-<!-- TOP BAR -->
-<div class="topbar">
-<div class="menu" onclick="toggleMenu()">☰</div>
-<div>Hobbies</div>
 </div>
 
 <!-- CONTENT -->
@@ -161,7 +155,7 @@ color:#333;
 <img src="games.png">
 <div>
 <h3>GAMING</h3>
-<p>I enjoy playing games</p>
+<p>I enjoy playing video games during my free time.</p>
 </div>
 </div>
 
@@ -169,7 +163,7 @@ color:#333;
 <img src="camera.png">
 <div>
 <h3>PHOTOGRAPHY</h3>
-<p>I love taking pictures</p>
+<p>I love capturing moments and scenery.</p>
 </div>
 </div>
 
@@ -177,68 +171,37 @@ color:#333;
 <img src="web.png">
 <div>
 <h3>DESIGNING</h3>
-<p>I enjoy doing designs</p>
+<p>I enjoy creating designs and layouts.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="soccer.png">
+<img src="music.png">
 <div>
-<h3>SPORT</h3>
-<p>I like playing soccer</p>
+<h3>LISTENING TO MUSIC</h3>
+<p>Music helps me relax and focus.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="soccer.png">
+<img src="travel.png">
 <div>
-<h3>SPORT</h3>
-<p>I like playing soccer</p>
+<h3>TRAVELING</h3>
+<p>I like exploring new places and cultures.</p>
 </div>
 </div>
 
 <div class="card">
-<img src="soccer.png">
+<img src="movie.png">
 <div>
-<h3>SPORT</h3>
-<p>I like playing soccer</p>
-</div>
-</div>
-
-<div class="card">
-<img src="soccer.png">
-<div>
-<h3>SPORT</h3>
-<p>I like playing soccer</p>
-</div>
-</div>
-
-<div class="card">
-<img src="soccer.png">
-<div>
-<h3>SPORT</h3>
-<p>I like playing soccer</p>
+<h3>WATCHING MOVIES</h3>
+<p>I enjoy watching movies and series.</p>
 </div>
 </div>
 
 </div>
+
 </div>
-
-<script>
-
-function toggleMenu(){
-
-let menu = document.getElementById("sidebar");
-
-if(menu.style.left === "0px"){
-menu.style.left = "-250px";
-}else{
-menu.style.left = "0px";
-}
-
-}
-
-</script>
 
 </body>
 </html>
