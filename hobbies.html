@@ -9,7 +9,6 @@
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -17,13 +16,11 @@ box-sizing:border-box;
 font-family:Arial, Helvetica, sans-serif;
 }
 
-/* BACKGROUND */
 body{
 background:url("bg.jpg") no-repeat center center/cover;
 min-height:100vh;
 }
 
-/* TOP BAR */
 .topbar{
 background:#222;
 color:white;
@@ -33,13 +30,11 @@ align-items:center;
 gap:15px;
 }
 
-/* MENU ICON */
 .menu{
 font-size:28px;
 cursor:pointer;
 }
 
-/* SIDEBAR */
 .sidebar{
 position:fixed;
 left:-250px;
@@ -66,7 +61,6 @@ border-bottom:1px solid #ddd;
 background:#ddd;
 }
 
-/* MAIN CONTAINER */
 .container{
 background:rgba(255,255,255,0.9);
 max-width:1000px;
@@ -75,22 +69,18 @@ padding:35px;
 border-radius:12px;
 }
 
-/* TITLE */
 .title{
 font-size:26px;
 margin-bottom:35px;
 text-align:center;
-color:#222;
 }
 
-/* HOBBIES GRID */
 .hobbies{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
-/* CARD */
 .card{
 background:#e6e6e6;
 padding:20px;
@@ -107,41 +97,22 @@ cursor:pointer;
 transform:translateY(-6px);
 }
 
-/* ICON */
 .card img{
 width:45px;
 }
 
-/* TEXT */
 .card h3{
 font-size:16px;
 margin-bottom:5px;
-color:#111;
 }
 
 .card p{
 font-size:13px;
-color:#333;
 }
 
-/* REMOVE LINK STYLE */
 .link-card{
 text-decoration:none;
 color:inherit;
-}
-
-/* MOBILE */
-@media (max-width:600px){
-
-.container{
-margin:20px;
-padding:25px;
-}
-
-.card{
-flex-direction:row;
-}
-
 }
 
 </style>
@@ -149,7 +120,6 @@ flex-direction:row;
 
 <body>
 
-<!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 <a href="home.html">Home</a>
 <a href="hobbies.html">Hobbies</a>
@@ -157,20 +127,17 @@ flex-direction:row;
 <a href="contact.html">Contact</a>
 </div>
 
-<!-- TOP BAR -->
 <div class="topbar">
 <div class="menu" onclick="toggleMenu()">☰</div>
 <div>Hobbies</div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
 <h2 class="title">HOBBIES</h2>
 
 <div class="hobbies">
 
-<!-- GAMING -->
 <a href="gaming.html" class="link-card">
 <div class="card">
 <img src="games.png">
@@ -181,7 +148,6 @@ flex-direction:row;
 </div>
 </a>
 
-<!-- PHOTOGRAPHY -->
 <a href="photography.html" class="link-card">
 <div class="card">
 <img src="camera.png">
@@ -192,7 +158,7 @@ flex-direction:row;
 </div>
 </a>
 
-<!-- DESIGNING -->
+<a href="designing.html" class="link-card">
 <div class="card">
 <img src="web.png">
 <div>
@@ -200,8 +166,9 @@ flex-direction:row;
 <p>I enjoy creating designs and layouts.</p>
 </div>
 </div>
+</a>
 
-<!-- MUSIC -->
+<a href="music.html" class="link-card">
 <div class="card">
 <img src="music.png">
 <div>
@@ -209,8 +176,9 @@ flex-direction:row;
 <p>Music helps me relax and focus.</p>
 </div>
 </div>
+</a>
 
-<!-- TRAVEL -->
+<a href="travel.html" class="link-card">
 <div class="card">
 <img src="travel.png">
 <div>
@@ -218,8 +186,9 @@ flex-direction:row;
 <p>I like exploring new places and cultures.</p>
 </div>
 </div>
+</a>
 
-<!-- MOVIES -->
+<a href="movies.html" class="link-card">
 <div class="card">
 <img src="movie.png">
 <div>
@@ -227,13 +196,13 @@ flex-direction:row;
 <p>I enjoy watching movies and series.</p>
 </div>
 </div>
+</a>
 
 </div>
 </div>
 
 <script>
 
-/* SIDEBAR MENU */
 function toggleMenu(){
 
 let menu=document.getElementById("sidebar");
