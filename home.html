@@ -41,7 +41,7 @@ font-size:30px;
 cursor:pointer;
 }
 
-/* SIDEBAR */
+/* SIDEBAR MENU */
 .sidebar{
 position:fixed;
 left:-250px;
@@ -68,7 +68,7 @@ border-bottom:1px solid #ddd;
 background:#ddd;
 }
 
-/* CONTENT */
+/* CONTENT CARD */
 .container{
 background:rgba(255,255,255,0.9);
 margin:40px;
@@ -112,9 +112,6 @@ line-height:1.6;
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
 
-<!-- LOGOUT -->
-<a href="#" onclick="logout()">Logout</a>
-
 </div>
 
 <!-- TOP BAR -->
@@ -141,15 +138,6 @@ Welcome to my personal website. I love exploring new things and expressing creat
 
 <script>
 
-/* RUN AFTER PAGE LOAD */
-window.onload = function(){
-
-if(localStorage.getItem("loggedIn") !== "true"){
-window.location.href = "login.html";
-}
-
-}
-
 /* SIDEBAR MENU */
 function toggleMenu(){
 
@@ -160,14 +148,6 @@ menu.style.left = "-250px";
 }else{
 menu.style.left = "0px";
 }
-
-}
-
-/* LOGOUT FUNCTION */
-function logout(){
-
-localStorage.removeItem("loggedIn");
-window.location.href = "login.html";
 
 }
 
