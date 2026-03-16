@@ -1,0 +1,193 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography | JM Website</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* BACKGROUND */
+body{
+background:url("bg.jpg") no-repeat center center/cover;
+min-height:100vh;
+}
+
+/* TOP BAR */
+.topbar{
+background:#222;
+color:white;
+padding:14px 20px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+/* MENU ICON */
+.menu{
+font-size:28px;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#f0f0f0;
+padding-top:60px;
+transition:0.3s;
+box-shadow:3px 0px 10px rgba(0,0,0,0.3);
+z-index:1000;
+}
+
+.sidebar a{
+display:block;
+padding:16px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+border-bottom:1px solid #ddd;
+}
+
+.sidebar a:hover{
+background:#ddd;
+}
+
+/* MAIN CONTAINER */
+.container{
+background:rgba(255,255,255,0.9);
+max-width:1000px;
+margin:50px auto;
+padding:35px;
+border-radius:12px;
+}
+
+/* TITLE */
+.title{
+font-size:26px;
+margin-bottom:35px;
+text-align:center;
+color:#222;
+}
+
+/* PHOTO GRID */
+.photos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+/* PHOTO CARD */
+.photo-card{
+background:#e6e6e6;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.photo-card:hover{
+transform:scale(1.05);
+}
+
+.photo-card img{
+width:100%;
+display:block;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+
+.container{
+margin:20px;
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+<a href="home.html">Home</a>
+<a href="hobbies.html">Hobbies</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>Photography</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h2 class="title">MY PHOTOGRAPHY</h2>
+
+<div class="photos">
+
+<div class="photo-card">
+<img src="photo1.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo2.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo3.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo4.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo5.jpg">
+</div>
+
+<div class="photo-card">
+<img src="photo6.jpg">
+</div>
+
+</div>
+</div>
+
+<script>
+
+/* SIDEBAR MENU */
+function toggleMenu(){
+
+let menu=document.getElementById("sidebar");
+
+if(menu.style.left==="0px"){
+menu.style.left="-250px";
+}else{
+menu.style.left="0px";
+}
+
+}
+
+</script>
+
+</body>
+</html>
+```
