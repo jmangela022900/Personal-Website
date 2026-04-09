@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Info | JM Website</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:url("bg.jpg") no-repeat center center/cover;
+min-height:100vh;
+}
+
+.topbar{
+background:#222;
+color:white;
+padding:14px 20px;
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.menu{
+font-size:28px;
+cursor:pointer;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#f0f0f0;
+padding-top:60px;
+transition:0.3s;
+box-shadow:3px 0px 10px rgba(0,0,0,0.3);
+}
+
+.sidebar a{
+display:block;
+padding:16px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+border-bottom:1px solid #ddd;
+}
+
+.sidebar a:hover{
+background:#ddd;
+}
+
+.container{
+background:rgba(255,255,255,0.9);
+max-width:900px;
+margin:50px auto;
+padding:40px;
+border-radius:10px;
+}
+
+.title{
+text-align:center;
+margin-bottom:30px;
+font-size:26px;
+}
+
+.info-box{
+background:#e6e6e6;
+padding:30px;
+border-radius:10px;
+line-height:1.8;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+<a href="home.html">Home</a>
+<a href="hobbies.html">Hobbies</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact</a>
+<a href="info.html">Info</a>
+
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="menu" onclick="toggleMenu()">☰</div>
+<div>Info</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+<h2 class="title">MY PERSONAL INFORMATION</h2>
+
+<div class="info-box">
+
+<p><b>Name:</b> Jm Angela M. Perocho</p>
+<p><b>Age:</b> 24</p>
+<p><b>Birthday:</b> September 22, 2000</p>
+<p><b>Address:</b> Philippines</p>
+<p><b>Course:</b> Bachelor of Science in Information Technology</p>
+<p><b>School:</b> Jose Rizal Memorial State University</p>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+let menu=document.getElementById("sidebar");
+
+if(menu.style.left==="0px"){
+menu.style.left="-250px";
+}else{
+menu.style.left="0px";
+}
+
+}
+
+</script>
+
+</body>
+</html>
