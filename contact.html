@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@ min-height:100vh;
 
 /* TOP BAR */
 .topbar{
-background:#222;
+background:#003366;
 color:white;
 padding:14px 20px;
 display:flex;
@@ -67,7 +68,7 @@ background:#ddd;
 /* CONTAINER */
 .container{
 background:rgba(255,255,255,0.9);
-max-width:1000px;
+max-width:1200px;
 margin:50px auto;
 padding:40px;
 border-radius:10px;
@@ -75,7 +76,7 @@ border-radius:10px;
 
 /* TITLE */
 .title{
-font-size:26px;
+font-size:32px;
 margin-bottom:35px;
 text-align:center;
 }
@@ -106,16 +107,20 @@ transform:translateY(-5px);
 /* ICON */
 .card img{
 width:55px;
+height:55px;
+object-fit:contain;
 margin-bottom:15px;
 }
 
 /* TEXT */
 .card h3{
 margin-bottom:10px;
+font-size:26px;
 }
 
 .card p{
 color:#333;
+font-size:18px;
 }
 
 .card a{
@@ -150,11 +155,11 @@ max-width:300px;
 
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
-<a href="home.html">Home</a>
+<a href="index.html">Home</a>
 <a href="hobbies.html">Hobbies</a>
 <a href="gallery.html">Gallery</a>
 <a href="contact.html">Contact</a>
-<a href="Other information.html">Other-Information</a>
+<a href="other-information.html">Other Information</a>
 </div>
 
 <!-- TOP BAR -->
@@ -195,27 +200,53 @@ jmangela022900@gmail.com
 <img src="facebook.png" alt="Facebook">
 <h3>Facebook</h3>
 <p>
-<a href="https://www.facebook.com/jay.em.373518" target="_blank">
+<a href="https://www.facebook.com/" target="_blank">
 Visit my Facebook
 </a>
 </p>
+</div>
 
-
-  <!-- FACEBOOK -->
+<!-- INSTAGRAM -->
 <div class="card">
 <img src="instagram.png" alt="Instagram">
 <h3>Instagram</h3>
 <p>
-<a href="https://www.instagram/jay.em.373518" target="_blank">
+<a href="https://www.instagram.com/" target="_blank">
 Visit my Instagram
 </a>
 </p>
+</div>
+
+<!-- TIKTOK -->
+<div class="card">
+<img src="tiktok.png" alt="TikTok">
+<h3>TikTok</h3>
+<p>
+<a href="https://www.tiktok.com/" target="_blank">
+Visit my TikTok
+</a>
+</p>
+</div>
+
+<!-- TELEGRAM -->
+<div class="card">
+<img src="telegram.png" alt="Telegram">
+<h3>Telegram</h3>
+<p>
+<a href="https://telegram.org/" target="_blank">
+Visit my Telegram
+</a>
+</p>
+</div>
+
+</div>
 </div>
 
 <script>
 
 /* SIDEBAR MENU */
 function toggleMenu(){
+
 let menu=document.getElementById("sidebar");
 
 if(menu.style.left==="0px"){
@@ -223,9 +254,11 @@ menu.style.left="-250px";
 }else{
 menu.style.left="0px";
 }
+
 }
 
 </script>
 
 </body>
 </html>
+```
